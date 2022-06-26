@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:snake/contron_panel.dart';
+import 'package:snake/control_panel.dart';
 import 'package:snake/direction.dart';
 import 'package:snake/piece.dart';
 import 'dart:math';
