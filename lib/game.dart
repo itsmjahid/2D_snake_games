@@ -115,7 +115,7 @@ class _GamePageState extends State<GamePage> {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: Colors.red,
+          backgroundColor: Color.fromARGB(255, 243, 23, 96),
           shape: RoundedRectangleBorder(
             side: BorderSide(color: Colors.blue, width: 3.0),
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -189,7 +189,7 @@ class _GamePageState extends State<GamePage> {
       posX: foodPosition!.dx.toInt(),
       posY: foodPosition!.dy.toInt(),
       size: step,
-      color: Colors.red,
+      color: Color.fromARGB(255, 255, 139, 7),
       isAnimated: true,
     );
   }
@@ -207,7 +207,7 @@ class _GamePageState extends State<GamePage> {
         posX: positions[i].dx.toInt(),
         posY: positions[i].dy.toInt(),
         size: step,
-        color: i.isEven ? Colors.red : Colors.green,
+        color: i.isEven ? Color.fromARGB(255, 43, 1, 122) : Color.fromARGB(255, 7, 197, 255),
         isAnimated: false,
       ));
     }
@@ -235,17 +235,19 @@ class _GamePageState extends State<GamePage> {
     upperBoundY = getNearestTens(screenHeight!.toInt() - step!);
     upperBoundX = getNearestTens(screenWidth!.toInt() - step!);
     return Scaffold(
-      body: Container(
-        color: Colors.amber,
-        child: Stack(
-          children: [
-            Stack(
-              children: getPieces(),
-            ),
-            getControls(),
-            food!,
-            getScore(),
-          ],
+      body: SafeArea(
+        child: Container(
+          color: Color.fromARGB(115, 36, 35, 35),
+          child: Stack(
+            children: [
+              Stack(
+                children: getPieces(),
+              ),
+              getControls(),
+              food!,
+              getScore(),
+            ],
+          ),
         ),
       ),
     );
